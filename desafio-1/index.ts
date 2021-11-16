@@ -14,7 +14,6 @@ const product: Product = {
 };
 
 const saveProduct = (product: Product) => {
-  console.log("Producto guardado:", JSON.stringify(product, null, 2));
   const el = document.getElementById("container");
   el.innerHTML = `<p>producto registrado:</p> <code>${JSON.stringify(
     product,

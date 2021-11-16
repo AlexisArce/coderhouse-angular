@@ -6,7 +6,6 @@ var product = {
     price: p
 };
 var saveProduct = function (product) {
-    console.log("Producto guardado:", JSON.stringify(product, null, 2));
     var el = document.getElementById("container");
     el.innerHTML = "<p>producto registrado:</p> <code>" + JSON.stringify(product, null, 2) + "</code>";
 };
