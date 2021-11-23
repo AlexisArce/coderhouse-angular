@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let city of cities">
+      <app-card
+        [name]="city.name"
+        [image]="city.image"
+        [page]="city.page"
+        [description]="city.description"
+      ></app-card>
+    </div>
+  </div>
+</div>
