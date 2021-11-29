@@ -1,0 +1,47 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="mb-3 col-lg-6">
+  <div class="mb-3">
+    <label for="title" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      formControlName="title"
+    />
+    <div
+      *ngIf="
+        productForm.get('name')?.touched && !productForm.get('name')?.valid
+      "
+      class="help-block"
+    >
+      El nombre es obligatorio
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Precio</label>
+    <input
+      type="text"
+      class="form-control"
+      id="price"
+      formControlName="price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Descripción</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      formControlName="description"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="thumbnail" class="form-label">URL imagen</label>
+    <input
+      type="text"
+      class="form-control"
+      id="thumbnail"
+      formControlName="thumbnail"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
