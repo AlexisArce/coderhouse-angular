@@ -9,9 +9,9 @@
     />
     <div
       *ngIf="
-        productForm.get('name')?.touched && !productForm.get('name')?.valid
+        !productForm.get('title')?.valid && productForm.get('title')?.touched
       "
-      class="help-block"
+      class="alert alert-danger m-3"
     >
       El nombre es obligatorio
     </div>
@@ -24,6 +24,14 @@
       id="price"
       formControlName="price"
     />
+    <div
+      *ngIf="
+        !productForm.get('price')?.valid && productForm.get('price')?.touched
+      "
+      class="alert alert-danger m-3"
+    >
+      El precio es obligatorio
+    </div>
   </div>
   <div class="mb-3">
     <label for="description" class="form-label">Descripción</label>
