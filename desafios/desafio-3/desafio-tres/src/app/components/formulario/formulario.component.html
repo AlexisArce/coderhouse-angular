@@ -11,7 +11,7 @@
       *ngIf="
         !productForm.get('title')?.valid && productForm.get('title')?.touched
       "
-      class="alert alert-danger m-3"
+      class="alert-danger border border-danger rounded m-2 p-1"
     >
       El nombre es obligatorio
     </div>
@@ -28,7 +28,7 @@
       *ngIf="
         !productForm.get('price')?.valid && productForm.get('price')?.touched
       "
-      class="alert alert-danger m-3"
+      class="alert-danger border border-danger rounded m-2 p-1"
     >
       El precio es obligatorio
     </div>
