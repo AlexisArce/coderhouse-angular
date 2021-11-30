@@ -8,10 +8,8 @@
       formControlName="title"
     />
     <div
-      *ngIf="
-        !productForm.get('title')?.valid && productForm.get('title')?.touched
-      "
-      class="alert-danger border border-danger rounded m-2 p-1"
+      *ngIf="!p.title.valid && p.title.touched"
+      class="alert alert-danger my-2 p-1"
     >
       Debe ingresar un nombre válido.
     </div>
@@ -19,16 +17,14 @@
   <div class="mb-3">
     <label for="price" class="form-label">Precio</label>
     <input
-      type="text"
+      type="number"
       class="form-control"
       id="price"
       formControlName="price"
     />
     <div
-      *ngIf="
-        !productForm.get('price')?.valid && productForm.get('price')?.touched
-      "
-      class="alert-danger border border-danger rounded m-2 p-1"
+      *ngIf="!p.price.valid && p.price.touched"
+      class="alert alert-danger my-2 p-1"
     >
       El precio es obligatorio.
     </div>
@@ -50,6 +46,14 @@
       id="thumbnail"
       formControlName="thumbnail"
     />
+    <div
+      *ngIf="!p.thumbnail.valid && p.thumbnail.touched"
+      class="alert alert-danger my-2 p-1"
+    >
+      Debe ingresar una URL válida.
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">
+    Enviar
+  </button>
 </form>
