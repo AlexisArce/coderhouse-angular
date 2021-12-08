@@ -1,1 +1,8 @@
-<p>item-list works!</p>
+<div class="row">
+  <div
+    class="col mb-3 d-flex align-items-stretch"
+    *ngFor="let product of products"
+  >
+    <app-card [product]="product"></app-card>
+  </div>
+</div>
