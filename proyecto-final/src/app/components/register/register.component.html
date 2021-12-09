@@ -1,1 +1,65 @@
-<p>register works!</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mb-3 col-lg-6">
+  <div class="mb-3">
+    <label for="firstName" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      formControlName="firstName"
+    />
+    <div
+      *ngIf="!c.firstName.valid && c.firstName.touched"
+      class="alert alert-danger my-2 p-1"
+    >
+      Debe ingresar su nombre.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Apellido</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastName"
+      formControlName="lastName"
+    />
+    <div
+      *ngIf="!c.lastName.valid && c.lastName.touched"
+      class="alert alert-danger my-2 p-1"
+    >
+      Debe ingresar su apellido.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="text"
+      class="form-control"
+      id="email"
+      formControlName="email"
+    />
+    <div
+      *ngIf="!c.email.valid && c.email.touched"
+      class="alert alert-danger my-2 p-1"
+    >
+      Debe ingresar un email válido.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Contraseña</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      formControlName="password"
+    />
+    <div
+      *ngIf="!c.password.valid && c.password.touched"
+      class="alert alert-danger my-2 p-1"
+    >
+      Debe ingresar la contraseña.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">
+    Registrar
+  </button>
+</form>
