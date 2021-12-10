@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { RxwebValidators } from '@rxweb/reactive-form-validators';
+import {
+  FormControl,
+  FormGroup,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,21 +13,15 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
 
-  userForm = new FormGroup({
-    firstName: new FormControl(null, [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    lastName: new FormControl(null, [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    email: new FormControl(null, [Validators.required, Validators.email]),
-    password: new FormControl(null, [Validators.required]),
+  userForm = this.fb.group({
+    firstName: ['', Validators.required, Validators.minLength(3)],
+    lastName: ['', Validators.required, Validators.minLength(3)],
+    email: ['', Validators.required, Validators.email],
+    password: ['', Validators.required],
   });
 
   get c() {
