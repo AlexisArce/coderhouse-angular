@@ -1,16 +1,18 @@
 <div class="card my-2" style="width: 18rem">
   <img
-    src="{{ product.image }}"
+    src="{{ product.Poster }}"
     class="card-img-top p-2"
-    alt="{{ product.title }}"
+    alt="{{ product.Title }}"
     width="150"
     height="300"
   />
   <div class="card-body">
-    <h5 class="card-title">{{ product.title }}</h5>
+    <h5 class="card-title">{{ product.Title }}</h5>
     <p class="card-text">
-      {{ product.description }}
+      {{ product.Year }}
     </p>
-    <button class="btn btn-primary">Agregar</button>
+    <div class="d-grid gap-2">
+      <button class="btn btn-secondary">Agregar</button>
+    </div>
   </div>
 </div>

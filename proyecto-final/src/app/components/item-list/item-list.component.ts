@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from './../../services/products.service';
+import { MoviesService } from './../../services/movies.service';
 
 @Component({
   selector: 'app-item-list',
@@ -7,7 +7,7 @@ import { ProductsService } from './../../services/products.service';
   styleUrls: ['./item-list.component.css'],
 })
 export class ItemListComponent implements OnInit {
-  constructor(private _productService: ProductsService) {}
+  constructor(private _moviesService: MoviesService) {}
 
   products: any;
 
@@ -16,6 +16,6 @@ export class ItemListComponent implements OnInit {
   }
 
   async getData() {
-    this.products = await this._productService.getAll().toPromise();
+    this.products = await this._moviesService.getAll();
   }
 }
