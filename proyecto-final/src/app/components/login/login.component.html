@@ -1,35 +1,43 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="mb-3 col-lg-6">
-  <div class="mb-3">
-    <label for="email" class="form-label">Email</label>
-    <input
-      type="text"
-      class="form-control"
-      id="email"
-      formControlName="email"
-    />
-    <div
-      *ngIf="!c.email.valid && c.email.touched"
-      class="alert alert-danger my-2 p-1"
-    >
-      Debe ingresar un email válido.
-    </div>
+<div class="row justify-content-md-center">
+  <div class="col-lg-6">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
+        <div
+          *ngIf="!c.email.valid && c.email.touched"
+          class="alert alert-danger my-2 p-1"
+        >
+          Debe ingresar un email válido.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+        />
+        <div
+          *ngIf="!c.password.valid && c.password.touched"
+          class="alert alert-danger my-2 p-1"
+        >
+          Debe ingresar la contraseña.
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!loginForm.valid"
+      >
+        Ingresar
+      </button>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Contraseña</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password"
-      formControlName="password"
-    />
-    <div
-      *ngIf="!c.password.valid && c.password.touched"
-      class="alert alert-danger my-2 p-1"
-    >
-      Debe ingresar la contraseña.
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
-    Ingresar
-  </button>
-</form>
+</div>
