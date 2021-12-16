@@ -1,0 +1,25 @@
+<div class="row" *ngIf="loading"><app-spinner></app-spinner></div>
+<div class="row" *ngIf="!loading">
+  <div class="offset-md-1 col-md-6">
+    <img
+      src="{{ product.image }}"
+      height="400"
+      width="400"
+      class="grey lighten-2 p-2"
+      alt="{product.title}"
+    />
+  </div>
+  <div class="col-md-4 text-center">
+    <h4>{{ product.title }}</h4>
+    <p class="badge rounded-pill bg-secondary m-4">$ {{ product.price }}</p>
+    <div class="text-center"></div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" type="button">Agregar al carrito</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="offset-md-1 col-md-10">
+    <div class="text--primary">{{ product?.description }}</div>
+  </div>
+</div>

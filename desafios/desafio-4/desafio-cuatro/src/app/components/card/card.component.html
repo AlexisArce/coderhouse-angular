@@ -1,0 +1,22 @@
+<div class="card my-2" style="width: 18rem">
+  <img
+    src="{{ product.image }}"
+    class="card-img-top p-2"
+    alt="{{ product.title }}"
+    width="150"
+    height="300"
+    routerLink="{{ getUrlDetails() }}"
+  />
+  <div class="card-body">
+    <h5 class="card-title" routerLink="{{ getUrlDetails() }}">
+      {{ product.title }}
+    </h5>
+    <p class="card-text"></p>
+    <p class="text-end" style="font-size: 1.4em">
+      <span class="badge rounded-pill bg-dark">$ {{ product.price }}</span>
+    </p>
+    <div class="d-grid gap-2">
+      <button class="btn btn-secondary">Agregar</button>
+    </div>
+  </div>
+</div>
