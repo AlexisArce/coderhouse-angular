@@ -11,5 +11,9 @@ export class CardComponent implements OnInit {
 
   constructor() {}
 
+  getImageUrl() {
+    return `https://www.themoviedb.org/t/p/w220_and_h330_face/${this.product.poster_path}`;
+  }
+
   ngOnInit(): void {}
 }

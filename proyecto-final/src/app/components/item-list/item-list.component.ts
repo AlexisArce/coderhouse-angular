@@ -16,6 +16,6 @@ export class ItemListComponent implements OnInit {
   }
 
   async getData() {
-    this.products = await this._moviesService.getAll();
+    this.products = await this._moviesService.getAll().toPromise();
   }
 }

@@ -1,10 +1,11 @@
 <div class="card my-2" style="width: 18rem">
   <img
-    src="{{ product.poster }}"
+    src="{{ getImageUrl() }}"
     class="card-img-top p-2"
     alt="{{ product.title }}"
-    width="150"
-    height="300"
+    width="220"
+    height="330"
+    loading="lazy"
   />
   <div class="card-body">
     <h5 class="card-title">{{ product.title }}</h5>
